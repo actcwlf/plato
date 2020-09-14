@@ -8,5 +8,7 @@
 ## 使用方法
 ```bash
 cd docker
-docker-build-isolated.sh ubuntu
+docker-build-isolated.sh
 ```
+
+`build.sh`中`bazel test plato/...`有可能因为网络原因执行失败，如果失败可注释该命令后重新构建镜像
