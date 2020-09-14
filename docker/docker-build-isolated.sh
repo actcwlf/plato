@@ -14,7 +14,7 @@ function build_docker() {
     fi
     DOCKER_TAG=$1
     DOCKER_FULL_TAG=platograph/plato-dev:$DOCKER_TAG
-    docker build -t $DOCKER_FULL_TAG -f $DOCKER_DIR/Dockerfile.$DOCKER_TAG .
+    docker build -t $DOCKER_FULL_TAG -f $DOCKER_DIR/Dockerfile .
     # pushd $ROOT_DIR
     docker run -e USER_NAME=$(id -un) -e USER_ID=$(id -u) -it $DOCKER_FULL_TAG
     # popd
@@ -23,11 +23,5 @@ function build_docker() {
 if [[ x$1 != x ]]; then
     build_docker $1
 else
-    build_docker centos.7
-    build_docker centos.8
-    build_docker fedora.31
-    build_docker ubuntu.16.04
-    build_docker ubuntu.18.04
-    build_docker debian.9
-    build_docker debian.10
+    build_docker 0.0.1
 fi

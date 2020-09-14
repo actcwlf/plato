@@ -20,6 +20,7 @@ debian_packages=(
     libnuma-dev
     zlib1g-dev
     vim
+    redis
 )
 
 redhat_packages=(
@@ -37,6 +38,7 @@ redhat_packages=(
     curl
     cmake
     vim
+    redis
 )
 
 function install_bazel() {

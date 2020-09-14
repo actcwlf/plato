@@ -4,7 +4,6 @@ MAINTAINER platoteam
 RUN mkdir /data && \
     mkdir /data/plato
 COPY ./ /data/plato/
-# RUN ls /data/plato/3rd
 
 COPY docker/install-dependencies.sh /usr/local/bin/
 RUN set -ex && \
