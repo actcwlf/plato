@@ -19,6 +19,7 @@ debian_packages=(
     curl
     libnuma-dev
     zlib1g-dev
+    vim
 )
 
 redhat_packages=(
@@ -35,6 +36,7 @@ redhat_packages=(
     wget
     curl
     cmake
+    vim
 )
 
 function install_bazel() {

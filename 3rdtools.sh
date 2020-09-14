@@ -136,6 +136,7 @@ function install {
   popd
 
   ## jni TODO
+  clean_exec ln -nsf jni6.0 jni
 
   ## hadoop TODO
   # if [ ! -f release-2.7.4.tar.gz ]; then
@@ -146,6 +147,10 @@ function install {
   # pushd hadoop-rel-release-2.7.4
   # mvn package -Pdist,native -DskipTests -Dtar
   # popd
+  clean_exec ln -nsf hadoop2.7.4 hadoop2
+  pushd hadoop2/lib
+  clean_exec ln -nsf libhdfs.so.0.0.0 libhdfs.so
+  popd
 
   ## jemalloc
   if [ ! -f jemalloc.5.2.0.tar.gz ]; then
